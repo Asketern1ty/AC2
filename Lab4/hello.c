@@ -37,7 +37,6 @@ static int __init hello_init(void)
         if (!md) {
             pr_err("Memory allocation failed\n");
             
-            // Очистка уже выделенной памяти при ошибке на промежуточном этапе
             struct hello_data *cur, *tmp;
             list_for_each_entry_safe(cur, tmp, &hello_list_head, list_node) {
                 list_del(&cur->list_node);
